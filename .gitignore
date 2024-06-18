@@ -1,0 +1,13 @@
+# Ignore all files
+*
+# But not directories, so we can apply rules to files within them
+!*/
+
+# Allow .cpp and .h files to be tracked
+!*.cpp
+!*.h
+
+# Ignore executable files
+*.exe
+*.out
+*.o
