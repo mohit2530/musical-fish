@@ -9,6 +9,11 @@
  */
 bool firstLast6(int nums[])
 {
+    int arrLength = sizeof(nums) / sizeof(nums[0]);
+    if (nums[0] == 6 || nums[arrLength - 1] == 6)
+    {
+        return true;
+    }
     return false;
 }
 
@@ -21,6 +26,11 @@ bool firstLast6(int nums[])
  */
 bool sameFirstLast(int nums[])
 {
+    int arrLength = sizeof(nums) / sizeof(nums[0]);
+    if (arrLength > 1 && nums[0] == nums[arrLength - 1])
+    {
+        return true;
+    }
     return false;
 }
 
@@ -42,6 +52,13 @@ std::array<int, 3> makePi()
  */
 bool commonEnd(int a[], int b[])
 {
+    int arrALength = sizeof(a) / sizeof(a[0]);
+    int arrBLength = sizeof(b) / sizeof(b[0]);
+
+    if (a[0] == b[0] || a[arrALength - 1] == b[arrBLength - 1])
+    {
+        return true;
+    }
     return false;
 }
 
@@ -53,7 +70,8 @@ bool commonEnd(int a[], int b[])
  */
 int sum3(int nums[])
 {
-    return 0;
+    int sum = nums[0] + nums[1] + nums[2];
+    return sum;
 }
 
 /*
@@ -65,7 +83,7 @@ int sum3(int nums[])
  */
 std::array<int, 3> rotateLeft3(int nums[])
 {
-    return {};
+    return std::array<int, 3>{nums[1], nums[2], nums[0]};
 }
 
 /*
@@ -77,7 +95,7 @@ std::array<int, 3> rotateLeft3(int nums[])
  */
 std::array<int, 3> reverse3(int nums[])
 {
-    return {};
+    return std::array<int, 3>{nums[2], nums[1], nums[0]};
 }
 
 /*
@@ -89,7 +107,15 @@ std::array<int, 3> reverse3(int nums[])
  */
 std::array<int, 3> maxEnd3(int nums[])
 {
-    return {};
+    int length = sizeof(nums) / sizeof(nums[0]);
+    if (nums[0] > nums[length - 1])
+    {
+        return std::array<int, 3>{nums[0], nums[0], nums[0]};
+    }
+    else
+    {
+        return std::array<int, 3>{nums[length - 1], nums[length - 1], nums[length - 1]};
+    }
 }
 
 /*
@@ -101,7 +127,19 @@ std::array<int, 3> maxEnd3(int nums[])
  */
 int sum2(int nums[])
 {
-    return 0;
+    int length = sizeof(nums) / sizeof(nums[0]);
+    if (length <= 0)
+    {
+        return 0;
+    }
+    else if (length < 2)
+    {
+        return nums[0] + nums[1];
+    }
+    else
+    {
+        return nums[0] + nums[1];
+    }
 }
 
 /*
@@ -111,9 +149,9 @@ int sum2(int nums[])
  middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
  middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
  */
-std::array<int, 3> middleWay(int a[], int b[])
+std::array<int, 2> middleWay(int a[], int b[])
 {
-    return {};
+    return std::array<int, 2>{a[1], b[1]};
 }
 
 /*
@@ -125,7 +163,6 @@ std::array<int, 3> middleWay(int a[], int b[])
  */
 int countEvens(int nums[])
 {
-    return 0;
 }
 
 /*
