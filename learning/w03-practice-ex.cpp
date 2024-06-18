@@ -163,6 +163,16 @@ std::array<int, 2> middleWay(int a[], int b[])
  */
 int countEvens(int nums[])
 {
+    int length = sizeof(nums) / sizeof(nums[0]);
+    int evenNos = 0;
+    for (int i = 0; i < length - 1; i++)
+    {
+        if (nums[i] % 2 == 0)
+        {
+            evenNos++;
+        }
+    }
+    return evenNos;
 }
 
 /*
@@ -175,7 +185,19 @@ int countEvens(int nums[])
  */
 int sum13(int nums[])
 {
-    return 0;
+    int length = sizeof(nums) / sizeof(nums[0]);
+    int sum = 0;
+    for (int i = 0; i < length - 1; i++)
+    {
+        if (nums[i] != 13)
+        {
+            sum = sum + nums[i];
+        }
+        else
+            i + 2;
+    }
+
+    return sum;
 }
 
 /*
@@ -186,6 +208,16 @@ int sum13(int nums[])
  */
 bool has22(int nums[])
 {
+    int length = sizeof(nums) / sizeof(nums[0]);
+    for (int i = 0; i < length - 1; i++)
+    {
+        if (nums[i] == 2 && nums[i + 1] == 2)
+        {
+            return true;
+        }
+        return false;
+    }
+
     return false;
 }
 
@@ -197,7 +229,15 @@ bool has22(int nums[])
  */
 bool lucky13(int nums[])
 {
-    return false;
+    int length = sizeof(nums) / sizeof(nums[0]);
+    for (int i = 0; i < length - 1; i++)
+    {
+        if (nums[i] == 1 || nums[i] == 3)
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 /*
@@ -208,5 +248,23 @@ bool lucky13(int nums[])
  */
 bool sum28(int nums[])
 {
-    return false;
+    int length = sizeof(nums) / sizeof(nums[0]);
+    int sum = 0;
+    for (int i = 0; i < length - 1; i++)
+    {
+        if (nums[i] == 2)
+        {
+            sum = sum + nums[i];
+        }
+    }
+    return sum == 8;
+}
+
+int main()
+{
+
+    std::array arrayValues = {1, 2, 3};
+    bool resp = firstLast6(arrayValues);
+
+    return 0;
 }
